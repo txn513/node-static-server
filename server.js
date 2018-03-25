@@ -9,7 +9,7 @@ http.createServer(function(req,res){
 	let urlObj = url.parse(req.url);
 	let pathname = urlObj.pathname;
 	let ext = path.extname(pathname);
-	// console.log(ext);
+	console.log(pathname);
 
 	if(pathname == '/'){
 		pathname = '/index.html';
@@ -30,21 +30,6 @@ http.createServer(function(req,res){
 
 		});
 	});
-	// if(mime){
-	// 	console.log(mime);
-	// 	fs.readFile('./static'+pathname,'utf8',function(err,data){
-	// 		if(err){
-	// 			res.writeHead(404,{'content-type': 'text/html; charset=utf8'});
-	// 			res.end('404');
-	// 			return;
-	// 		}
-	// 		console.log(data);
-	// 		res.writeHead(200,{'content-type': + mime[ext] +'; charset=utf8'});
-	// 		res.end(data);
-
-	// 	});
-	// }
-	
 	
 }).listen(3000);
 
